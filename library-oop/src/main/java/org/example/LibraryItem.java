@@ -9,7 +9,7 @@ public abstract sealed class LibraryItem permits Book, Magazine{
     private int publicationYear;
 
     public LibraryItem(String title, int publicationYear) {
-        id++;
+        id = ++id;
         this.title = title;
         this.publicationYear = publicationYear;
     }

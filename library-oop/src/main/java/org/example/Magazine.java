@@ -23,6 +23,6 @@ public final class Magazine extends LibraryItem {
 
     @Override
     String getDetails() {
-        return "magazine :" + "title: " + this.getTitle() + "publication year: " + this.getPublicationYear() ;
+        return  "id: " + this.getId() + "magazine :" + "title: " + this.getTitle() + "publication year: " + this.getPublicationYear() ;
     }
 }

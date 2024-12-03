@@ -1,5 +1,6 @@
 package org.example;
 
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -8,6 +9,7 @@ public class Main {
 
     static Scanner scanner = new Scanner(System.in);
     static Set<LibraryItem> libraryItemSet = new HashSet<>();
+    static Set<BorrowRecord> borrowRecordSet = new HashSet<>();
 
     public static void main(String[] args) {
 
@@ -20,6 +22,9 @@ public class Main {
                         Welcome ! 
                         1. Add item to Library
                         2. See items list
+                        3.borrow a book
+                        4.See all borrows
+                        5.quit the program
                         """
         );
 
@@ -29,8 +34,37 @@ public class Main {
         switch (choice){
             case 1 -> addItem();
             case 2 -> seeAllItems();
-            case 3 -> quitProgram();
+            case 3 -> borrowBook();
+            case 4 -> seeAllBorrows();
+            case 5 -> quitProgram();
         }
+    }
+
+    private static void seeAllBorrows() {
+
+        borrowRecordSet.forEach(borrow -> System.out.println(borrow.toString()));
+
+        printMenu();
+
+    }
+
+    private static void borrowBook() {
+        System.out.println("which item you would like to borrow ?  Please tell the item id");
+
+        int itemId = scanner.nextInt();
+
+        var chariot = scanner.nextLine();
+
+        System.out.println("what is your name ?");
+
+        String borrowerName = scanner.nextLine();
+
+        BorrowRecord newBorowRecord = new BorrowRecord(itemId,borrowerName, Instant.now().toString());
+
+        borrowRecordSet.add(newBorowRecord);
+
+        printMenu();
+
     }
 
 

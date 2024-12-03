@@ -30,6 +30,6 @@ public final class Book extends LibraryItem {
 
     @Override
     String getDetails() {
-        return "book: " + " title: " + getTitle() + " publication year " + getPublicationYear() + " the author:  " + author + " genre : " + genre;
+        return "id: " + this.getId() +" book: " + " title: " + getTitle() + " publication year " + getPublicationYear() + " the author:  " + author + " genre : " + genre;
     }
 }
