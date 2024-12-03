@@ -2,14 +2,16 @@ package org.example;
 
 public abstract sealed class LibraryItem permits Book, Magazine{
 
-    private static int id = 0;
+    private static int idIncrementor = 0;
+
+    private int id;
 
     private String title;
 
     private int publicationYear;
 
     public LibraryItem(String title, int publicationYear) {
-        id = ++id;
+        id = ++idIncrementor;
         this.title = title;
         this.publicationYear = publicationYear;
     }
