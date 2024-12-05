@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        IText startText = new Text();
+        IText startText = new Text("the text to test");
         System.out.println(startText.transform());
 
         IText upperCaseText = new UpperCaseDecorator(startText);
