@@ -2,7 +2,7 @@ package org.example.adapter;
 
 public class Adapter implements ICurrencyAdapter{
 
-    private CurrencyConverter currencyConverter;
+    private final CurrencyConverter currencyConverter;
 
     public Adapter(CurrencyConverter currencyConverter) {
         this.currencyConverter = currencyConverter;
