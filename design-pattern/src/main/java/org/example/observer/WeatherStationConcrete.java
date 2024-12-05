@@ -23,19 +23,8 @@ public class WeatherStationConcrete implements Subject{
         observers.forEach(o->o.update(weather));
     }
 
-    public List<Observer> getObservers() {
-        return observers;
-    }
-
-    public void setObservers(List<Observer> observers) {
-        this.observers = observers;
-    }
-
-    public String getWeather() {
-        return weather;
-    }
-
     public void setWeather(String weather) {
         this.weather = weather;
+        notifyObserver();
     }
 }
