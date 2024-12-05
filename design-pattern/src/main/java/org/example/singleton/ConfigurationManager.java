@@ -8,13 +8,6 @@ public class ConfigurationManager {
 
     private Map<String, String> configMap;
 
-//    private ConfigurationManager() {
-//        //fake import
-//        configMap = new HashMap<>();
-//        configMap.put("db.host", "localhost");
-//        configMap.put("db.port", "5432");
-//    }
-
     private ConfigurationManager() {
 
     }

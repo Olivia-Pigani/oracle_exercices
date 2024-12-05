@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Map<String,String> configMap = new HashMap<>();
+        Map<String, String> configMap = new HashMap<>();
         configMap.put("db.host", "localhost");
         configMap.put("db.port", "5432");
 
@@ -22,7 +22,7 @@ public class Main {
         }
 
 
-        Map<String,String> configMap2 = new HashMap<>();
+        Map<String, String> configMap2 = new HashMap<>();
         configMap.put("db.host", "aaaaaa");
         configMap.put("db.pqdqt", "54dddd32");
 
