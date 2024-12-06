@@ -11,10 +11,9 @@ public class Playlist {
 
     List<Track> trackList = new ArrayList<>();
 
-    public Playlist(String name, String genre, List<Track> trackList) {
+    public Playlist(String name, String genre) {
         this.name = name;
         this.genre = genre;
-        this.trackList = trackList;
     }
 
     public String getName() {
@@ -37,7 +36,13 @@ public class Playlist {
         return trackList;
     }
 
-    public void setTrackList(List<Track> trackList) {
-        this.trackList = trackList;
+    public void addSong(Track track){
+        trackList.add(track);
+        System.out.println("the song " + track.getName() + " of " + track.getSinger() + " has been add from the playlist " + name + " with the genre " + genre);
+    }
+
+    public void removeSong(Track track){
+        trackList.add(track);
+        System.out.println("the song " + track.getName() + " of " + track.getSinger() + " has been removed from the playlist " + name + " with the genre " + genre);
     }
 }

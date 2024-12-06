@@ -27,11 +27,5 @@ public class Track {
         this.singer = singer;
     }
 
-    public void addSong(){
-        System.out.println("the song " + name + " of " + singer + " has been put into the playlist");
-    }
 
-    public void removeSong(){
-        System.out.println("the song " + name + " of " + singer + " has been removed from the playlist");
-    }
 }
