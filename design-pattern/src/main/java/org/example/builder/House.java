@@ -2,6 +2,10 @@ package org.example.builder;
 
 public class House {
 
+    private static int idIncrementor = 0;
+
+    private int id;
+
     private String name;
 
     private int floorNumber;
@@ -13,6 +17,7 @@ public class House {
     private String roofType;
 
     private House(HouseBuilder houseBuilder) {
+        this.id = ++idIncrementor;
         this.name = houseBuilder.name;
         this.floorNumber = houseBuilder.floorNumber;
         this.genre = houseBuilder.genre;
@@ -23,7 +28,8 @@ public class House {
     @Override
     public String toString() {
         return "House{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", floorNumber=" + floorNumber +
                 ", genre='" + genre + '\'' +
                 ", isHaveSwimmingPool=" + isHaveSwimmingPool +
