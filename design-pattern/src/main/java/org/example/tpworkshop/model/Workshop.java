@@ -1,9 +1,12 @@
 package org.example.tpworkshop.model;
 
 import org.example.tpworkshop.Observer;
+import org.example.tpworkshop.model.impl.ToyFactory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Workshop {
 
@@ -15,7 +18,7 @@ public class Workshop {
 
     private List<IToy> IToyList = new ArrayList<>();
 
-    //private Map<String, ToyFactory> toyFactoryMap = new HashMap<>();
+   // private Map<String, ToyFactory> toyFactoryMap = new HashMap<>();
 
     private Workshop() {
     }
@@ -63,5 +66,9 @@ public class Workshop {
     public void setToyList(List<IToy> IToyList) {
         this.IToyList = IToyList;
     }
+
+//    public void registerFactory(String factoryName){
+//    ToyFactory factory = toyFactoryMap.get(factoryName);
+//    }
 
 }
