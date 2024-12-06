@@ -2,7 +2,7 @@ package org.example.tpworkshop;
 
 import org.example.tpworkshop.model.IToy;
 
-public class PimpedDecorator extends ToyDecorator{
+public class PimpedDecorator extends ToyDecorator {
     public PimpedDecorator(IToy toy) {
         super(toy);
     }

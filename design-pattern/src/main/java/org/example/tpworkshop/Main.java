@@ -30,6 +30,10 @@ public class Main {
         fragileIToy1.make();
         workshop.notifyObserver("toy has been made : " + fragileIToy1);
 
+        IToy fragileIToy2 = fragileToyFactory.makeToy();
+        fragileIToy2.make();
+        workshop.notifyObserver("toy has been made : " + fragileIToy2);
+
         IToy solidIToy1 = solidToyFactory.makeToy();
         solidIToy1.make();
         workshop.notifyObserver("toy has been made : " + solidIToy1);

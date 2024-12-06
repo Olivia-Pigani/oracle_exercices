@@ -15,6 +15,8 @@ public class Workshop {
 
     private List<IToy> IToyList = new ArrayList<>();
 
+    //private Map<String, ToyFactory> toyFactoryMap = new HashMap<>();
+
     private Workshop() {
     }
 
@@ -61,4 +63,5 @@ public class Workshop {
     public void setToyList(List<IToy> IToyList) {
         this.IToyList = IToyList;
     }
+
 }

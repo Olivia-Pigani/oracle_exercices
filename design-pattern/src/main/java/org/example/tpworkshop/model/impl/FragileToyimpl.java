@@ -4,6 +4,17 @@ import org.example.tpworkshop.model.IToy;
 
 public class FragileToyimpl implements IToy {
 
+    private static int idIncrementor = 0;
+
+    private int id;
+
+    private String name = "fragile toy";
+
+    public FragileToyimpl() {
+        this.id = ++idIncrementor;
+        this.name = name;
+    }
+
     @Override
     public void make() {
         System.out.println("fragile toy has been maked");
@@ -14,4 +25,11 @@ public class FragileToyimpl implements IToy {
         return "";
     }
 
+    @Override
+    public String toString() {
+        return "FragileToyimpl{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
