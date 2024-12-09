@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -6,14 +8,14 @@ import java.util.function.Consumer;
 public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
-    public static Map<String,Calculator> allCalculatorFuncMap = new HashMap<>();
+    public static Map<String, Calculator> allCalculatorFuncMap = new HashMap<>();
 
     public static void main(String[] args) {
 
-        allCalculatorFuncMap.put("addition",  (nb1, nb2) -> nb1 + nb2 );
-        allCalculatorFuncMap.put("substraction",  (nb1, nb2) -> nb1 - nb2 );
-        allCalculatorFuncMap.put("multiply",  (nb1, nb2) -> nb1 * nb2 );
-        allCalculatorFuncMap.put("divide",  (nb1, nb2) -> nb1 / nb2 );
+        allCalculatorFuncMap.put("addition", (nb1, nb2) -> nb1 + nb2);
+        allCalculatorFuncMap.put("substraction", (nb1, nb2) -> nb1 - nb2);
+        allCalculatorFuncMap.put("multiply", (nb1, nb2) -> nb1 * nb2);
+        allCalculatorFuncMap.put("divide", (nb1, nb2) -> nb1 / nb2);
 
         printMenu();
 
@@ -36,7 +38,7 @@ public class Main {
 
         var chariot = scanner.nextLine();
 
-        switch (choice){
+        switch (choice) {
             case 1 -> {
                 printMessage.accept(" number 1 ? ");
                 var nb1Add = scanner.nextDouble();
@@ -96,6 +98,4 @@ public class Main {
         }
 
     }
-
-
 }
