@@ -12,7 +12,7 @@ public final class Bird extends Animal{
     }
 
     @Override
-    String getDetails() {
-        return "bird infos : " + this.getId() + " name: " + this.getName() + " species : " + this.getSpecies();
+    void getDetails() {
+        return super.getDetails() + "bird infos : " + this.getId() + " name: " + this.getName() + " species : " + this.getSpecies();
     }
 }

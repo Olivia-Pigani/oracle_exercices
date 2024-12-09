@@ -11,7 +11,12 @@ public class Enclosure {
 
     private String name;
 
-    private List<Animal> animalList = new ArrayList<>();
+    private List<Animal> animalList;
+
+    public Enclosure(String name) {
+        this.name = name;
+        this.animalList = new ArrayList<>();
+    }
 
     public void addAnimal(Animal animal){
         animalList.add(animal);
