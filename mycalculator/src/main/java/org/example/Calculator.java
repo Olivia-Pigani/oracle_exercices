@@ -1,9 +1,9 @@
 package org.example;
 
     @FunctionalInterface
-    public interface Calculator {
+    public interface Calculator{
 
-        double addition(double nb1, double nb2);
+        double action(double nb1, double nb2);
 
     }
 
