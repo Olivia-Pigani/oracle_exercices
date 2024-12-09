@@ -1,9 +1,9 @@
 package org.example;
 
     @FunctionalInterface
-    public interface Calculator{
+    public interface Calculator<T extends Number>{
 
-        double action(double nb1, double nb2);
+        T action(T nb1, T nb2);
 
     }
 

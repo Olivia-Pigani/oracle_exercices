@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
-    public static Map<String, Calculator> allCalculatorFuncMap = new HashMap<>();
+    public static Map<String, Calculator<Double>> allCalculatorFuncMap = new HashMap<>();
     public static Consumer<String> printMessage = m -> System.out.println(m);
 
     public static void main(String[] args) {
@@ -37,6 +37,11 @@ public class Main {
 
         int choice = scanner.nextInt();
 
+        if (choice == 5){
+            printMessage.accept("bye");
+            System.exit(0);
+        }
+
         var chariot = scanner.nextLine();
 
         printMessage.accept(" number 1 ? ");
@@ -44,7 +49,14 @@ public class Main {
         printMessage.accept(" number 2 ? ");
         var nb2 = scanner.nextDouble();
 
-        action(nb1,nb2,choice);
+        if (nb1 < 1 || nb2 < 1){
+            printMessage.accept("both number can not be below 0, start again please");
+            mainMenu();
+        } else {
+
+            action(nb1,nb2,choice);
+        }
+
 
     }
 
@@ -53,7 +65,7 @@ public class Main {
         switch (choice) {
             case 1 -> {
                 Calculator addition = allCalculatorFuncMap.get("addition");
-                double result = addition.action(nb1, nb2);
+                Number result = addition.action(nb1, nb2);
                 printMessage.accept(String.valueOf(result));
 
                 mainMenu();
@@ -62,7 +74,7 @@ public class Main {
             case 2 -> {
 
                 Calculator substraction = allCalculatorFuncMap.get("substraction");
-                double result = substraction.action(nb1, nb2);
+                Number result = substraction.action(nb1, nb2);
                 printMessage.accept(String.valueOf(result));
 
                 mainMenu();
@@ -71,7 +83,7 @@ public class Main {
             case 3 -> {
 
                 Calculator multiply = allCalculatorFuncMap.get("multiply");
-                double result = multiply.action(nb1, nb2);
+                Number result = multiply.action(nb1, nb2);
                 printMessage.accept(String.valueOf(result));
 
                 mainMenu();
@@ -80,16 +92,12 @@ public class Main {
             case 4 -> {
 
                 Calculator multiply = allCalculatorFuncMap.get("divide");
-                double result = multiply.action(nb1, nb2);
+                Number result = multiply.action(nb1, nb2);
                 printMessage.accept(String.valueOf(result));
 
                 mainMenu();
             }
 
-            case 5 -> {
-                printMessage.accept("bye");
-                System.exit(0);
-            }
         }
 
     }
