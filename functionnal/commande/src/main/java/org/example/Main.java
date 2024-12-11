@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -69,9 +71,14 @@ public class Main {
 
         //Vérifier si tous les clients ont une commande livrée : Grouper par client et utiliser Stream.allMatch pour vérifier la condition.
 //        boolean isEverybodyDelivered = commandes.stream()
-//                .allMatch(Commande::isEstLivree);
+//                .collect(Collectors.groupingBy(Commande::getClient))
+//                .values()
+//                .stream()
+//                .allMatch(commande -> commande.stream().allMatch(Commande::isEstLivree));
 //
 //        System.out.println(isEverybodyDelivered);
+
+
 
     }
 
