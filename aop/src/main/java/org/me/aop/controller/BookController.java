@@ -1,5 +1,6 @@
 package org.me.aop.controller;
 
+import org.me.aop.exception.BookNotInDatabaseException;
 import org.me.aop.model.Book;
 import org.me.aop.service.BookService;
 import org.springframework.http.HttpStatus;
@@ -19,12 +20,12 @@ public class BookController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Book>> getAllBooks(){
+    public ResponseEntity<List<Book>> getAllBooks() throws InterruptedException, BookNotInDatabaseException {
         return new ResponseEntity<>(bookService.getAllBooks(), HttpStatus.OK);
     }
 
     @DeleteMapping("/{bookId}")
-    public ResponseEntity<String> deleteBook(@PathVariable int bookId){
+    public ResponseEntity<String> deleteBook(@PathVariable int bookId) throws BookNotInDatabaseException {
         return new ResponseEntity<>(bookService.deleteABook(bookId),HttpStatus.OK);
     }
 
