@@ -8,19 +8,26 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Main {
     public static void main(String[] args) {
 
+        // Avec Try with resources
+
         AtomicInteger atomicInteger = new AtomicInteger(1);
 
         try (ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
         ) {
 
-            Runnable runnable = new MyRunnable(atomicInteger.get());
+            scheduledExecutorService.scheduleAtFixedRate(() -> {
+                        int currentCount = atomicInteger.incrementAndGet();
+                        System.out.println("Message périodique: " + currentCount);
 
-            scheduledExecutorService.scheduleAtFixedRate(runnable,
-                    1000,
-                    2000,
-                    TimeUnit.MILLISECONDS);
+                        if (currentCount > 4) {
+                            System.out.println("fini");
+                        }
 
-        }catch (Exception ex){
+                    },
+                    1000, 2000, TimeUnit.MILLISECONDS
+            );
+
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
@@ -28,4 +35,28 @@ public class Main {
     }
 
 
+// Sans Try with resources
+
+//        AtomicInteger atomicInteger = new AtomicInteger(0);
+//
+//        ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+//
+//        scheduledExecutorService.scheduleAtFixedRate(() -> {
+//                    int currentCount = atomicInteger.incrementAndGet();
+//                    System.out.println("Message périodique: " + currentCount);
+//
+//                    if (currentCount > 4) {
+//                        System.out.println("fini");
+//                        scheduledExecutorService.shutdown();
+//                    }
+//
+//                },
+//                1000, 2000, TimeUnit.MILLISECONDS
+//        );
+//
+//
+
 }
+
+
+
