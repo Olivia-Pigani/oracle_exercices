@@ -15,6 +15,7 @@ public class Main {
         try (ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
         ) {
 
+
             scheduledExecutorService.scheduleAtFixedRate(() -> {
                         int currentCount = atomicInteger.incrementAndGet();
                         System.out.println("Message périodique: " + currentCount);
@@ -27,6 +28,9 @@ public class Main {
                     1000, 2000, TimeUnit.MILLISECONDS
             );
 
+            //empeche le close direct du try with resources
+          //  Thread.sleep(10000);
+            scheduledExecutorService.awaitTermination(10,TimeUnit.SECONDS);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
