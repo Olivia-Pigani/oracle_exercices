@@ -7,7 +7,6 @@ public class Main {
         Thread t2 = new Thread(Printer::getResource, "tache 2");
         Thread t3 = new Thread(Printer::getResource, "tache 3");
 
-        // Lancer les threads
         t1.start();
         t2.start();
         t3.start();
