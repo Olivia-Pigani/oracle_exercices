@@ -5,14 +5,12 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Printer {
 
-    private static String resource = "myresource";
-
     private static ReentrantLock lock = new ReentrantLock();
 
     public Printer() {
     }
 
-    public static void getResource()  {
+    public static void getResource() {
         System.out.println(Thread.currentThread().getName() + " tente d'utiliser l'imprimante ... ");
 
         try {
