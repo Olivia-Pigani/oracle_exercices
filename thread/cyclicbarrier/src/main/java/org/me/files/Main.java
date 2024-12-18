@@ -9,7 +9,6 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class Main {
 
@@ -25,10 +24,11 @@ public class Main {
     }
 
     private static void fusion(List<String> pathList) {
-        AtomicReference<StringBuilder> finalText = new AtomicReference<>(new StringBuilder());
+
+        StringBuilder finalText = new StringBuilder();
 
         CyclicBarrier barrier = new CyclicBarrier(pathList.size(), () -> {
-            System.out.println("Fusion des données terminée. Tous les threads peuvent continuer, le texte final est " + finalText.get());
+            System.out.println("Fusion des données terminée. Tous les threads peuvent continuer, le texte final est " + finalText);
         });
 
         ExecutorService executorService = Executors.newFixedThreadPool(pathList.size());
@@ -52,7 +52,7 @@ public class Main {
         executorService.shutdown();
     }
 
-    private static void fillFinalText(AtomicReference<StringBuilder> finalText, String filePath) {
+    private static void fillFinalText(StringBuilder finalText, String filePath) {
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
 
@@ -63,7 +63,7 @@ public class Main {
             // finalText.get().append(currentText);
 
             synchronized (finalText) {
-                finalText.get().append(currentText);
+                finalText.append(currentText);
             }
 
         } catch (IOException e) {
