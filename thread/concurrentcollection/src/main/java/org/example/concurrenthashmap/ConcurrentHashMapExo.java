@@ -1,10 +1,10 @@
-package org.example;
+package org.example.concurrenthashmap;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Main {
+public class ConcurrentHashMapExo {
     public static void main(String[] args) throws InterruptedException {
 
         ConcurrentHashMap<String, Integer> inventory = new ConcurrentHashMap<>();
