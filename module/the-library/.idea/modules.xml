@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LibraryApp/LibraryApp.iml" filepath="$PROJECT_DIR$/LibraryApp/LibraryApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service/impl.email/impl.email.iml" filepath="$PROJECT_DIR$/service/impl.email/impl.email.iml" />
+      <module fileurl="file://$PROJECT_DIR$/moduleBookApi/moduleBookApi.iml" filepath="$PROJECT_DIR$/moduleBookApi/moduleBookApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/moduleCheckout/moduleCheckout.iml" filepath="$PROJECT_DIR$/moduleCheckout/moduleCheckout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/moduleInventory/moduleInventory.iml" filepath="$PROJECT_DIR$/moduleInventory/moduleInventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/moduleReports/moduleReports.iml" filepath="$PROJECT_DIR$/moduleReports/moduleReports.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service.api/service.api.iml" filepath="$PROJECT_DIR$/service.api/service.api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service.impl.email/service.impl.email.iml" filepath="$PROJECT_DIR$/service.impl.email/service.impl.email.iml" />
+      <module fileurl="file://$PROJECT_DIR$/the-library.iml" filepath="$PROJECT_DIR$/the-library.iml" />
+    </modules>
+  </component>
+</project>

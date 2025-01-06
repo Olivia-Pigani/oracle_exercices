@@ -1,0 +1,3 @@
+module moduleBookApi {
+    exports book;
+}
