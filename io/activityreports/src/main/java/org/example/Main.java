@@ -3,12 +3,10 @@ package org.example;
 import org.example.pojo.Activity;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import static org.example.BinaryHandler.makeBackups;
+import static org.example.BinaryHandler.makeBackup;
+import static org.example.BinaryHandler.readBackup;
 import static org.example.TextHandler.addActivity;
 import static org.example.TextHandler.getActivities;
 
@@ -41,11 +39,11 @@ public class Main {
 
         var chariot = scanner.nextLine();
 
-        switch(menuChoice){
+        switch (menuChoice) {
             case 1 -> addActivityMenu();
             case 2 -> seeActivities();
-            case 3 -> makeBackup(activities);
-//            case 4 -> readBackup();
+            case 3 -> makeBackupMenu();
+            case 4 -> readBackupMenu();
             case 5 -> {
                 System.out.println("bye !");
                 System.exit(0);
@@ -56,9 +54,15 @@ public class Main {
         printMenu();
     }
 
-    private static void makeBackup(String activities) throws IOException {
+    private static void readBackupMenu() {
 
-        makeBackups(activities);
+        readBackup();
+
+    }
+
+    private static void makeBackupMenu() throws IOException {
+
+        makeBackup();
 
     }
 
@@ -78,7 +82,7 @@ public class Main {
 
         String activityDescription = scanner.nextLine();
 
-        Activity newActivity = new Activity(activityDescription, LocalDateTime.now());
+        Activity newActivity = new Activity(activityDescription);
 
         addActivity(newActivity);
 

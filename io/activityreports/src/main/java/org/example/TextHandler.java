@@ -10,7 +10,7 @@ public class TextHandler {
 
     public static void addActivity(Activity newActivity) throws IOException {
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(JOURNAL_PATH))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(JOURNAL_PATH, true))) {
 
             writer.write(newActivity.toString());
 

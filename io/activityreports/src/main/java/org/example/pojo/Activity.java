@@ -1,16 +1,17 @@
 package org.example.pojo;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Activity {
 
     private String description;
 
-    private LocalDateTime date;
+    private String date;
 
-    public Activity(String description, LocalDateTime date) {
+    public Activity(String description) {
         this.description = description;
-        this.date = LocalDateTime.now();
+        this.date = new SimpleDateFormat("dddd-MM-dd HH:mm:ss").format(new Date());
     }
 
     public String getDescription() {
@@ -21,7 +22,7 @@ public class Activity {
         this.description = description;
     }
 
-    public LocalDateTime getDate() {
+    public String getDate() {
         return date;
     }
 
