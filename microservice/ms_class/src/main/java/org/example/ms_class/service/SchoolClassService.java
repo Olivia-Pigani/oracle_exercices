@@ -19,7 +19,6 @@ import static org.example.ms_class.constant.ApiConstant.*;
 public class SchoolClassService {
 
     private final SchoolClassRepository schoolClassRepository;
-    private RestTemplate restTemplate;
 
     public SchoolClassService(SchoolClassRepository schoolClassRepository) {
         this.schoolClassRepository = schoolClassRepository;
