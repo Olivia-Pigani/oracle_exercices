@@ -16,32 +16,16 @@ public class Professor {
 
     private String birthDate;
 
-    private String subject;
+    private int subjectId;
 
-    public Professor(String firstName, String lastName, String birthDate, String subject) {
+    public Professor(String firstName, String lastName, String birthDate,int subjectId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
-        this.subject = subject;
+        this.subjectId = subjectId;
     }
 
     public Professor() {
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public String getFirstName() {
@@ -52,11 +36,31 @@ public class Professor {
         this.firstName = firstName;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public String getBirthDate() {
         return birthDate;
     }
 
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public int getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public long getId() {
+        return id;
     }
 }

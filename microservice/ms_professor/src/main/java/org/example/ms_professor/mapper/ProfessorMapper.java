@@ -16,7 +16,7 @@ public class ProfessorMapper {
                 professor.getFirstName(),
                 professor.getLastName(),
                 professor.getBirthDate(),
-                professor.getSubject()
+                professor.getSubjectId()
         );
     }
 
@@ -31,7 +31,7 @@ public class ProfessorMapper {
                 professorRequestDto.firstName(),
                 professorRequestDto.lastName(),
                 professorRequestDto.birthDate(),
-                professorRequestDto.subject()
+                professorRequestDto.subjectId()
         );
     }
 

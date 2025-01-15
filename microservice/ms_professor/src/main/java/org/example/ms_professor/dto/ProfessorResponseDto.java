@@ -10,7 +10,7 @@ public record ProfessorResponseDto(
 
         String birthDate,
 
-        String subject
+        int subjectId
 
 ) {
 }

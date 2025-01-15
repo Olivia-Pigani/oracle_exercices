@@ -14,7 +14,6 @@ public class ProfessorService {
 
     private ProfessorRepository professorRepository;
 
-
     public ProfessorService(ProfessorRepository professorRepository) {
         this.professorRepository = professorRepository;
     }

@@ -1,7 +1,6 @@
-package org.example.ms_professor.dto;
+package org.example.api_gateway.dto;
 
 public record ProfessorRequestDto(
-
         String firstName,
 
         String lastName,

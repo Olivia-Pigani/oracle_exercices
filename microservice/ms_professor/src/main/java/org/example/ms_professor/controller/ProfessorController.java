@@ -23,6 +23,7 @@ public class ProfessorController {
     public List<ProfessorResponseDto> getAllProfessors(){
         return professorService.getAllProfessors();
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<ProfessorResponseDto> getProfessorById(@PathVariable("id") long id){
         return new ResponseEntity<>(professorService.getProfessorById(id), HttpStatus.OK);
