@@ -2,11 +2,19 @@ package org.example.ms_customer;
 
 
 import jakarta.persistence.Id;
+import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+//@Document
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Customer {
 
     @Id
-    private long id;
+    private String id;
 
     private String firstname;
 
@@ -15,7 +23,6 @@ public class Customer {
     private String phoneNumber;
 
     private String email;
-
 
 
 }
