@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: user_crud
+
+  data:
+    mongodb:
+      uri: mongodb://myuser:1234@localhost:27017/user?authSource=admin
+server:
+  port: 8090
