@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: order_crud
+
+  sql:
+    init:
+      schema-locations: classpath:schema_db.sql
+      mode: always
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/order_db
+    username: myuser
+    password: 1234
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+
+server:
+  port: 8090

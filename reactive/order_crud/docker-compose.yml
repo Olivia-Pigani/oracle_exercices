@@ -1,0 +1,33 @@
+services:
+  postgresql:
+    container_name: postgres
+    image: postgres
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=1234
+      - PGDATA=/var/lib/postgresql/data
+      - POSTGRES_DB=order_db
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: myuser@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: 1234
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      -  pgadmin:/var/lib/postgresql
+    ports:
+      - 5050:80
+    restart: unless-stopped
+
+volumes:
+  postgres:
+  pgadmin:
+
+# please run docker compose up --build
