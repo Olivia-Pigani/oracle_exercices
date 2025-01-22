@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: room_management
+
+  data:
+    mongodb:
+      uri: mongodb://myuser:1234@localhost:27017/admin?authSource=admin
+
+server:
+  port: 8095
