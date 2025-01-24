@@ -38,6 +38,6 @@ you can type exit to quit the exec mode, restart server and  go to http://localh
 
 14. nano index.html after running : apt update + apt install -y nano + nano --version
 
-15. mae updates : <html><body><h1>Je suis heureuse et je m'appelle Olivia</h1></body></html>
+15. make updates : <html><body><h1>Je suis heureuse et je m'appelle Someone</h1></body></html>
 
 16. restart server and see the result in http://localhost:8080/ ! 
